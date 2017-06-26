@@ -23,6 +23,7 @@ public class BubbleSort {
 
         // 优化冒泡排序
         optimizeBubbleSort(optimizeList);
+        Arrays.stream(optimizeList).forEach(System.out::print);
     }
 
     /**
