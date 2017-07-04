@@ -34,6 +34,7 @@ public class QuickSort {
         //数组的第一个作为中轴
         int temp = paramList[start];
         while (start < end) {
+            // 判断中轴右侧的要大就不动,小的话就交换
             while (start < end && paramList[end] >= temp) {
                 end--;
             }
