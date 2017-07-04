@@ -43,7 +43,7 @@ public class StringMatch {
                 i++;
                 j++;
             } else {
-                // 不相等则长字符串回到原点,重新比较
+                // 不相等则长字符串回到与已比较长度位移之前,重新比较
                 i = i - j + 1;
                 j = 0;
             }
@@ -62,7 +62,8 @@ public class StringMatch {
      * @return 匹配字符在长字符串中的位置
      */
     private static int kmpMatch(String originS, String matchedS) {
-        // next 数组各值的含义：代表当前字符之前的字符串中，有多大长度的相同前缀后缀。例如如果next [j] = k，代表j 之前的字符串中有最大长度为k 的相同前缀后缀
+        // next 数组各值的含义: 代表当前字符之前的字符串中,有多大长度的相同前缀后缀。
+        // 例如如果next [j] = k,代表j 之前的字符串中有最大长度为k 的相同前缀后缀
 
         char[] originArray = originS.toCharArray();
         char[] matchedArray = matchedS.toCharArray();
@@ -101,6 +102,7 @@ public class StringMatch {
      * 2. eg: abab : 0 0 1 2
      * 3. 最大对称长度的前缀后缀，然后整体右移一位，初值赋为-1
      * 4. eg: abab : -1 0 0 1
+     *
      * @param matchedArray 需要匹配的pattern字符串
      * @return 位移数组
      */
