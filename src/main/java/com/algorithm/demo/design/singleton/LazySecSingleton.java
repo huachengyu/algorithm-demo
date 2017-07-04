@@ -17,6 +17,7 @@ public class LazySecSingleton {
 
     private LazySecSingleton(){}
 
+    // 此处若不加synchronized关键字,则为线程不安全的单例模式
     public static synchronized LazySecSingleton getInstance() {
         if(null == instance) {
             instance = new LazySecSingleton();
