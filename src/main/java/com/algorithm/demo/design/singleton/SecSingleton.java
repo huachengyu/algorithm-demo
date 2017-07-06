@@ -16,6 +16,8 @@ public class SecSingleton {
 
     private SecSingleton() {}
 
+    // JVM内部的机制能够保证当一个类被加载的时候
+    // 这个类的加载过程是线程互斥的。
     public static SecSingleton getInstance() {
         return instance;
     }
